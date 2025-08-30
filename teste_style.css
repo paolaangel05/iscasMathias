@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --cor-primaria: #973030;;
+    --cor-secundaria: #c6a48d;
+    --cor--background: #f9f9f9;
+    --font-h1:  clamp(1.5rem, 2vw, 2em);
+    --font-h2:  clamp(1rem, 3vw, 1.5rem);
+    --border-rounded: 0.5rem; 
+    --shadow-default: 0 4px rgba(0, 0, 0, 0.036);
+    --transition: all 0.3s ease; /* Padronizar transições de animações */
+    --font-pequena: clamp(0.75rem, 1vw, 0.875rem); 
+    --font-base:  clamp(0.87rem, 2vw, 1.0rem);      
+    --font-grande:  clamp(0.87rem, 2vw, 1.3rem);    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    
+    background-color: var(--cor--background);
+}
+
+/* ---------- Conteúdo header ---------- */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(233, 235, 234);
+    margin: 1rem 0 1rem 0;
+}
+
+/* Logo */
+a.logo{
+    /* background-color: aquamarine; */
+    padding-left: 0.5rem;
+}
+.logo img{
+    display:block;
+    width: clamp(7.75rem, 28vw, 11.375rem); /*inicio:124px cresce em tela=430px chega em 198px */
+    height: auto;
+
+}
+
+/* Menu  navegação */
+.nav__menu{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__itens{
+    list-style-type: none;
+    padding: 0.3rem;
+    transition: var(--transition);
+}
+
+.nav__itens:hover{
+    opacity:0.7;
+}
+
+.nav__itens a{
+    text-decoration: none;
+    font-size: clamp(var(--font-base));
+    text-transform: uppercase;
+    color: #666;
+}
+
+.nav__itens a:hover{
+    color: rgb(142, 30, 30);
+    text-decoration: underline;
+    text-underline-offset: 5px; /* aumenta distancia do sublinhado e o texto*/
+}
+/* ---------- fim do Conteúdo header ---------- */
+
+/* ---------- Inicio Lançamento ---------- */
+.lancamento__container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #486cb4c4;
+    padding: 1rem 5%;
+    gap: 1.5rem;
+
+}
+
+.lancamento__conteudo{
+    flex:1;
+
+}
+
+.lancamento__img{
+    flex:1;
+    max-width: 400px; /* Definindo os limites do container da img*/
+    min-width:250;
+
+}
+
+.lancamento__img img{
+    width: 100%;
+    height:auto;
+        object-fit: cover;
+    clip-path: polygon(9% 0, 100% 0%, 91% 100%, 0% 100%);
+}
+
+.lancamento__conteudo h2{
+    font-size: var(--font-h1);
+    color: #e9320d;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 0.5rem 0;
+    letter-spacing: 0.2rem;
+
+}
+
+.lancamento__conteudo h2:nth-child(2){
+    color: #f2f85b;
+    font-weight: 900;
+    font-family:"Playfair Display", serif;
+
+    
+
+}
+
+.lancamento__container p{
+    margin: 1rem 0;
+    color: #333;
+    font-size: var(--font-h1);
+}
+
+.btn__primitiva{
+    display: inline-block; /*Se comporta como bloco, mas alinha como texto */
+    padding: 0.5rem 0.5rem;
+    background: var(--cor-primaria);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-rounded);
+    font-weight: bold;
+    font-size: var(--font-grande);
+    transition: var(--transition);
+    letter-spacing:0.1rem;
+    font-weight: bold;
+
+}
+
+
+
+@media (max-width: 768px) {
+    .lancamento__container{
+        flex-direction: column;
+        text-align: center;
+    }
+    .lancamento__conteudo{
+        padding-bottom: 1rem;
+    }
+
+}
+    
+
+
+
+/* ---------- Fim Lançamento ---------- */
+
+
+
+
+/* ----------Conteúdo da seção hero----------*/
+.hero{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 5%;
+    background-color: var(--cor--background);
+}
+
+/* :Texto */
+.hero__conteudo{
+    /* background-color: rgb(244, 221, 186); */
+    flex: 1;
+}
+
+.hero__conteudo h1{
+    margin: 1rem 0;
+    color: #333;
+    font-size: var(--font-h1);
+}
+
+.hero__conteudo h2{
+    color: #666;
+    font-size: var(--font-h2);
+    text-transform: uppercase;
+}
+
+.btn{
+    display: inline-block; /*Se comporta como bloco, mas alinha como texto */
+    padding: 0.8rem 1.5rem;
+    background: var(--cor-primaria);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-rounded);
+    font-weight: bold;
+    font-size: var(--font-grande);
+    transition: var(--transition);
+    letter-spacing:0.1rem;
+    font-weight: bold;
+
+}
+
+.btn:hover{
+    opacity:0.8;
+}
+
+/* container da imagem */
+.hero__imagem{
+    flex: 1;
+    max-width: 400px;
+    min-width: 200px;
+
+}
+
+/* Alterações da imagem */
+.hero__imagem img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* https://bennettfeely.com/clippy/ */
+    /* clip-path: polygon(40% 0, 100% 0, 100% 70%, 70% 100%, 0 100%, 0 40%, 40% 0); */
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 14% 100%, 0% 50%, 14% 0);
+}
+
+/* responsividade da imagem cyborg */
+@media (max-width: 768px) {
+    .hero{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero__conteudo{
+        padding-bottom: 1rem; /*Pra botão nao grudar para telas pequenas*/
+    }
+
+}
+
+/* ----------fim do Conteúdo da seção hero----------*/
+
+/* ----------citacao---------- */
+
+.citacao__pescaria{
+    background-color: #f0f8ff;
+    border-left: 5px solid #2c7a7b;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;           
+    border-radius: var(--border-rounded);
+    max-width: 400px;  
+}
+
+.citacao__pescaria citie{
+    display:block;
+    margin-top: 0.5rem;
+    font-style: normal;    /* tira itálico do cite */
+    font-weight: bold;
+    color: #2c7a7b;
+    text-align: right;   
+}
+
+/* ----------citacao---------- */
+
+
+.titulo__produtos{
+    display:block;
+    background-color: rgb(233, 235, 234);
+    padding: 1rem 5%;
+}
+.titulo__produtos h2{
+    margin: 2rem 0 2rem 0;
+    /* color: #9c2c2c; */
+    color: #666;
+    font-size: var(--font-h1);
+    text-align: center;
+    font-weight: 600;
+}
+
+.titulo__produtos span{
+   font-weight: 700;
+}
+
+.produtos__container{
+    display:grid;
+}
+
+/* SEÇÃO PRODUTOS */
+
+.produtos__container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    justify-items: center;
+    align-items: center;
+    row-gap: 2rem;
+    column-gap: 3rem;
+    padding: 2rem;
+}   
+
+/* agrupa imagem e textos */
+.produtos__article{
+    border-radius: var(--border-rounded);
+    /* box-shadow: var(--shadow-default); */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que bordas arredondadas também afetem a imagem */
+    transition: transform 0.3s ease; /* Animação suave ao aplicar transformações */
+    text-align: center; /* Centraliza os textos dentro do card */
+
+}
+
+.produtos__article:hover {
+  transform: translateY(-5px); 
+  /* Quando passar o mouse: o card sobe levemente, criando um efeito de "flutuar" */
+    /* border: 1px solid rgba(168, 23, 23, 0.057); */
+}
+
+.produtos__img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    overflow: hidden; 
+    border-top: 1px 1px 0 1px solid  #f6f6f6;
+    border-right: 1px solid  #f6f6f6;
+    border-left: 1px solid  #f6f6f6;
+}
+
+.produtos__data{
+    padding: 1rem;
+
+}
